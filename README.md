@@ -40,9 +40,9 @@ js/main.js      Mobile nav, scroll reveals, stat counters, mailto booking
 
 ## What's in the box
 
-- Animated top ticker + scrolling sponsor marquee
+- Animated top ticker
 - Custom SVG NASCAR stock car with bobbing animation
 - 3 service tiers with pricing
-- "The Bobby Way" story + animated stat counters
+- "The Nicky Bobby Way" story + animated stat counters
 - 3-step process, testimonials, and a working mailto booking form
 - Fully responsive, respects `prefers-reduced-motion`
