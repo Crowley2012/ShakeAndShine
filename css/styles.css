@@ -394,18 +394,38 @@ p { margin: 0 0 1rem; }
 .addon { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; padding: 0.7rem 0.9rem; background: var(--off); border: 2px solid var(--line); border-radius: 10px; font-size: 0.92rem; }
 .addon b { font-family: var(--font-head); color: var(--red); font-size: 1.05rem; white-space: nowrap; }
 .services__note {
-  margin: 2rem auto 0;
-  max-width: 760px;
+  margin: 2.2rem auto 0;
+  max-width: 780px;
   background: var(--white);
-  border: 2px dashed var(--line);
+  border: 3px solid var(--black);
   border-radius: var(--radius);
-  padding: 1rem 1.3rem;
-  text-align: center;
-  color: var(--gray);
-  font-size: 0.95rem;
-  line-height: 1.5;
+  box-shadow: 6px 6px 0 var(--black);
+  overflow: hidden;
 }
-.services__note b { color: var(--black); font-family: var(--font-head); letter-spacing: 0.02em; }
+.services__note-head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: var(--yellow);
+  border-bottom: 3px solid var(--black);
+  padding: 0.75rem 1.15rem;
+  font-family: var(--font-head);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 1rem;
+  color: var(--black);
+}
+.services__note-head b { font-weight: 800; }
+.services__note-icon { font-size: 1.35rem; line-height: 1; }
+.services__note-body {
+  margin: 0;
+  padding: 1.05rem 1.2rem;
+  color: var(--gray);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+.services__note-body b { color: var(--black); }
 
 /* ---------- About + Stats ---------- */
 .about { background: var(--white); }
