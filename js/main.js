@@ -111,7 +111,7 @@
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify({
           access_key: ACCESS_KEY,
-          email: "crowley.p.sean@gmail.com", // TEMP test recipient; flip back to nickwilliamsindy19@gmail.com after testing
+          email: "nickwilliamsindy19@gmail.com",
           subject: "New booking — " + name,
           name: name,
           contact: contact,
