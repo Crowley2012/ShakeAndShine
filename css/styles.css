@@ -253,15 +253,17 @@ p { margin: 0 0 1rem; }
 @keyframes car-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 .hero__plaque {
   position: absolute;
-  right: 4%;
-  bottom: -6%;
+  top: -4%;
+  right: 0;
+  left: auto;
+  bottom: auto;
   display: flex;
   align-items: center;
   gap: 0.7rem;
   background: var(--white);
   border: 3px solid var(--black);
   border-radius: 12px;
-  padding: 0.6rem 0.9rem;
+  padding: 0.55rem 0.85rem;
   box-shadow: 5px 5px 0 var(--black);
   transform: rotate(3deg);
 }
