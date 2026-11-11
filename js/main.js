@@ -88,6 +88,7 @@
       var els = form.elements;
       var name = (els["name"].value || "").trim();
       var contact = (els["phone"].value || "").trim();
+      var address = (els["address"].value || "").trim();
       var pkg = els["pkg"].value;
       var notes = (els["notes"].value || "").trim();
       var botcheck = els["botcheck"] ? els["botcheck"].value : "";
@@ -113,6 +114,7 @@
           subject: "New booking — " + name,
           name: name,
           contact: contact,
+          address: address,
           package: pkg,
           notes: notes,
           botcheck: botcheck
