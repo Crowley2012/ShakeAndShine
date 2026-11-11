@@ -393,6 +393,19 @@ p { margin: 0 0 1rem; }
 .addons__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
 .addon { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; padding: 0.7rem 0.9rem; background: var(--off); border: 2px solid var(--line); border-radius: 10px; font-size: 0.92rem; }
 .addon b { font-family: var(--font-head); color: var(--red); font-size: 1.05rem; white-space: nowrap; }
+.services__note {
+  margin: 2rem auto 0;
+  max-width: 760px;
+  background: var(--white);
+  border: 2px dashed var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.3rem;
+  text-align: center;
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.services__note b { color: var(--black); font-family: var(--font-head); letter-spacing: 0.02em; }
 
 /* ---------- About + Stats ---------- */
 .about { background: var(--white); }
