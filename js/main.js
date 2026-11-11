@@ -137,6 +137,22 @@
     });
   }
 
+  /* ---------- Scroll progress ---------- */
+  var progress = document.getElementById("navProgress");
+  if (progress) {
+    var ticking = false;
+    var updateProgress = function () {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = max > 0 ? Math.min(window.scrollY / max, 1) * 100 : 0;
+      progress.style.width = pct + "%";
+      ticking = false;
+    };
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(updateProgress); }
+    }, { passive: true });
+    updateProgress();
+  }
+
   /* ---------- Footer year ---------- */
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
