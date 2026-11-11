@@ -89,6 +89,7 @@
       var name = (els["name"].value || "").trim();
       var contact = (els["phone"].value || "").trim();
       var address = (els["address"].value || "").trim();
+      var date = (els["date"].value || "").trim();
       var pkg = els["pkg"].value;
       var notes = (els["notes"].value || "").trim();
       var botcheck = els["botcheck"] ? els["botcheck"].value : "";
@@ -115,6 +116,7 @@
           name: name,
           contact: contact,
           address: address,
+          date: date,
           package: pkg,
           notes: notes,
           botcheck: botcheck
