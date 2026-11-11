@@ -74,37 +74,62 @@
     });
   }
 
-  /* ---------- Booking form -> mailto ---------- */
+  /* ---------- Booking form -> Web3Forms ---------- */
   var form = document.getElementById("bookForm");
   var note = document.getElementById("bookNote");
-  var EMAIL = "nickwilliamsindy19@gmail.com";
+
+  // Web3Forms access key (web3forms.com -> your dashboard).
+  var ACCESS_KEY = "fccc31fd-b60d-4a3b-babf-5e6c5d0ad20e";
 
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var name = (form.name.value || "").trim();
-      var contact = (form.phone.value || "").trim();
-      var pkg = form.pkg.value;
-      var notes = (form.notes.value || "").trim();
+
+      var els = form.elements;
+      var name = (els["name"].value || "").trim();
+      var contact = (els["phone"].value || "").trim();
+      var pkg = els["pkg"].value;
+      var notes = (els["notes"].value || "").trim();
+      var botcheck = els["botcheck"] ? els["botcheck"].value : "";
 
       if (!name || !contact) {
         if (note) note.textContent = "Pop in your name and a way to reach you so I can confirm the slot.";
         return;
       }
 
-      var subject = encodeURIComponent("Detail booking for " + name);
-      var body = encodeURIComponent(
-        "Name: " + name + "\n" +
-        "Contact: " + contact + "\n" +
-        "Package: " + pkg + "\n" +
-        (notes ? "Notes: " + notes + "\n" : "") +
-        "\n\nSent from Nicky Bobby's Shake & Shine"
-      );
-      window.location.href = "mailto:" + EMAIL + "?subject=" + subject + "&body=" + body;
-
-      if (note) {
-        note.textContent = "Opening your email app… hit send and I'll lock in your slot. 🏁";
+      if (ACCESS_KEY === "PASTE_YOUR_WEB3FORMS_ACCESS_KEY") {
+        if (note) note.textContent = "Booking email isn't hooked up yet — text (317) 800-9301 and I'll get you on the grid. 🏁";
+        return;
       }
+
+      if (note) note.textContent = "Sending…";
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          access_key: ACCESS_KEY,
+          email: "crowley.p.sean@gmail.com", // TEMP test recipient; flip back to nickwilliamsindy19@gmail.com after testing
+          subject: "New booking — " + name,
+          name: name,
+          contact: contact,
+          package: pkg,
+          notes: notes,
+          botcheck: botcheck
+        })
+      })
+        .then(function (res) { return res.json(); })
+        .then(function (data) {
+          if (data && (data.success === true || data.success === "true")) {
+            if (note) note.textContent = "You're on the grid! I'll be in touch shortly. 🏁";
+            form.reset();
+          } else {
+            if (note) note.textContent = "Hmm, that didn't go through. Text (317) 800-9301 and I'll sort you out. 🏁";
+          }
+        })
+        .catch(function () {
+          if (note) note.textContent = "Network hiccup — couldn't send. Text (317) 800-9301 and I'll get you booked. 🏁";
+        });
     });
   }
 

@@ -353,7 +353,13 @@
       <h2 class="book__title">BOOK YOUR <span>SHINE</span></h2>
       <p class="book__lead">Grab a slot on the grid. I'll get back to you faster than a pit stop.</p>
 
+      <div class="book__textcta">
+        <a class="btn btn--primary" href="sms:+13178009301?body=Hey%20Nicky%2C%20I%27d%20like%20to%20book%20a%20car%20wash.">📱 Text (317) 800-9301</a>
+        <span>Prefer to text? It's the fastest way to lock in a slot.</span>
+      </div>
+
       <form class="book__form" id="bookForm" novalidate>
+        <input type="hidden" name="botcheck" />
         <div class="field">
           <label for="name">Your Name</label>
           <input id="name" name="name" type="text" placeholder="Ricky Bobby" required />
