@@ -77,7 +77,7 @@
   /* ---------- Booking form -> mailto ---------- */
   var form = document.getElementById("bookForm");
   var note = document.getElementById("bookNote");
-  var EMAIL = "nicks@shakendshine.com"; // <-- change to the real inbox
+  var EMAIL = "nickwilliamsindy19@gmail.com";
 
   if (form) {
     form.addEventListener("submit", function (e) {
