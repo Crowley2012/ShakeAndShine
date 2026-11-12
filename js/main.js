@@ -113,9 +113,9 @@
         body: JSON.stringify({
           access_key: ACCESS_KEY,
           subject: "New booking — " + name,
+          email: email,
           name: name,
           contact: contact,
-          customer_email: email,
           address: address,
           date: date,
           package: pkg,
