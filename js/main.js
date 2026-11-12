@@ -112,7 +112,6 @@
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify({
           access_key: ACCESS_KEY,
-          email: "shakeandshinedetailing@gmail.com",
           subject: "New booking — " + name,
           name: name,
           contact: contact,
