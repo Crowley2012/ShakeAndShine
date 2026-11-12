@@ -88,6 +88,7 @@
       var els = form.elements;
       var name = (els["name"].value || "").trim();
       var contact = (els["phone"].value || "").trim();
+      var email = els["email"] ? (els["email"].value || "").trim() : "";
       var address = (els["address"].value || "").trim();
       var date = (els["date"].value || "").trim();
       var pkg = els["pkg"].value;
@@ -111,10 +112,11 @@
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify({
           access_key: ACCESS_KEY,
-          email: "nickwilliamsindy19@gmail.com",
+          email: "shakeandshinedetailing@gmail.com",
           subject: "New booking — " + name,
           name: name,
           contact: contact,
+          customer_email: email,
           address: address,
           date: date,
           package: pkg,
